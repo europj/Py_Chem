@@ -126,7 +126,7 @@ while delta > conver and count < 100:
   #print 'EOne = ', EOne
   #print 'ETwo = ', ETwo
   E0 += Vnn
-  #print 'E0', E0
+  print 'E0', E0
 
   # Update Fock alpha and beta
   F_a = h + Vee_a
@@ -162,7 +162,6 @@ while delta > conver and count < 100:
 Pmz = P_a - P_b
 spin_expect = 1/4.0 * ((np.trace(np.dot(Pmz,S)))**2 + 2*np.trace(np.dot(Pmz,S).dot(Pmz).dot(S)))
 
-
 elapsed_time = time.time() - start_time
 
 ### Print results ###
@@ -177,6 +176,7 @@ print '<S'+u'\xb2'+ '> =', spin_expect
 print 'SCF iterations: ' + str(count)
 print 'Elapsed time: ' + str(elapsed_time) + ' sec'
 print '', len(S)
+print 'MO Coeffs (alpha) = \n' + np.array_str(C_a)
 #print 'Fock Matrix (alpha) = \n' + np.array_str(F_a)
 #print 'Fock Matrix (beta) = \n' + np.array_str(F_b)
 #print 'Density Matrix (alpha) = \n' + np.array_str(P_a)
